@@ -1,0 +1,161 @@
+#1.Create a lambda function that should double or multiply the number (that we will be passing
+#in the lambda function) by 2. Store the lambda function in a variable named ‘double_num’.
+
+
+double_num= lambda a,b:a*b
+double_num(3.21,4.32)
+
+O/P:13.8672
+
+#2.Create a function named ‘factor’ that can only accept 1 argument. The function should
+#return the factorial of that number.
+
+def factor(num):
+    if (num == 0 or num == 1):
+        return 1
+    else:
+        return num*factor(num-1)
+factor(4)
+
+O/P: 24
+
+#3. Create a class named ‘student’ and inside the class, create a function named ‘fun1’- this
+#method should accept the user defined input and return that value.
+#a. Create another method named- message() and that method should print the user
+#defined input that we have defined in ‘fun1’.
+
+
+class student:
+    def fun1(self):
+        self.value = input("Enter hi :")
+        return self.value
+    def message(self):
+        print("Message method")
+        print(self.value)
+        
+        
+s1=student()
+s1.fun1()
+s1.message()
+
+Enter hi : hello
+Message method
+hello
+
+
+#4.Create 2 methods named ‘Hello’. In the 1st Hello method, pass only one argument and pass
+#this message: ‘This function only has 1 argument’. And in the 2nd Hello method, pass
+#two arguments and pass this message: ‘This function has 2 arguments’.
+#a. Try to call both the methods and analyze the output of both the methods.
+
+class methodexample:
+    def Hello(self,a):
+        self.a=a
+        print("This function only has 1 argument")
+    def Hello(self,a,c):
+        self.a=a
+        self.c=c
+        print("This function has 2 argument")
+
+obj=methodexample()
+obj.Hello(2,3)
+
+#we cant call two methods because method overloading is not possible
+
+O/P: This function has 2 argument
+
+#5.Create a class named ‘Encapsulation’:
+#a. Inside the class, first create a constructor. Inside the constructor, initialize
+#originalValue variable as 10.
+#b. After creating the constructor, define a function named ‘Value’ and this function
+#should return the variable that we have initialized in the constructor.
+#c. Now create 2nd function named setValue, and pass an argument named
+#‘newValue’. The task of this function will be to replace the value of the
+#originalValue variable by the value of the newValue variable.
+
+class Encapsulation:
+    def __init__(self):
+        self.originalValue =10
+        
+    def Value(self):
+        return self.originalValue
+
+    def setValue(self,newValue):
+        self.newValue=newValue
+        self.originalValue=newValue
+        print("original value:",self.originalValue)
+        return self.newValue
+obj=Encapsulation()
+print(obj.Value())
+obj.setValue(30)
+
+O/P: 10
+original value: 30
+30
+
+#6.
+class Super:
+    def fun1(self):
+        print("This is function1 in the super class")
+
+class Modified_Super(Super):
+    def fun1(self):
+        print("This is function 1 in the Modified super class")
+    def fun2(self):
+        print("This is 2 function in the Modified super class")
+
+M1=Modified_Super()
+s1=Super()
+
+s1.fun1()
+M1.fun1()
+M1.fun2()
+
+This is function1 in the super class
+This is function 1 in the Modified super class
+This is 2 function in the Modified super class
+
+
+#7. Create a function named ‘check_string’, the function should accept a string data from the
+#user and the function should check if the user input contains the letter ‘s’ in it. If it contains
+#the letter ‘s’ then print- ‘The string is containing the letter ‘s’’, if not then print- ‘The string
+#doesn’t contain the letter ‘s’’.
+
+class task2:
+    def check_string(self):
+        self.string_data=input("Enter your String data:")
+        if("s" in self.string_data):
+            print("The string is containing the letter ‘s’")
+        else:
+            print("The string doesn’t contain the letter ‘s’")
+obj=task2()
+obj.check_string()
+
+O/P:Enter your String data: hello
+The string doesn’t contain the letter ‘s’
+
+#8. Create a method named ‘Sum’ that can accept multiple user inputs. 
+#Now add those userdefined input values using for loop and the function should return the addition of the numbers.
+
+class task1:
+    def Sum(self):
+        self.x,self.y,self.z=input("Enter Multiple Values:")
+        return self.x,self.y,self.z
+obj=task1()
+obj.Sum()
+
+O/P:Enter Multiple Values: 102030
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[99], line 6
+      4         return self.x,self.y,self.z
+      5 obj=task1()
+----> 6 obj.Sum()
+
+Cell In[99], line 3, in task1.Sum(self)
+      2 def Sum(self):
+----> 3     self.x,self.y,self.z=input("Enter Multiple Values:")
+      4     return self.x,self.y,self.z
+
+ValueError: too many values to unpack (expected 3)
