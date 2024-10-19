@@ -1,5 +1,5 @@
 ******************************************
------Python HandsOn Day1-------
+-----Python HandsOn Day1---------
 ******************************************
 
 #1.Create a lambda function that should double or multiply the number (that we will be passing
